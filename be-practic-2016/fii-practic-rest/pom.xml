@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ro.fiipractic</groupId>
+		<artifactId>fii-practic-master</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>fii-practic-rest</artifactId>
+	<packaging>pom</packaging>
+	<name>FII Practic 2016 REST master</name>
+	<description>Master project for FII Practic 2016 REST</description>
+
+	<inceptionYear>2016</inceptionYear>
+
+	<modules>
+		<module>fii-practic-rest-core</module>
+		<module>fii-practic-rest-loader</module>
+	</modules>
+
+	<properties>
+		<resteasy.version>3.0.16.Final</resteasy.version>
+		<fasterxml.version>2.7.2</fasterxml.version>
+		<cors.filter.version>2.5</cors.filter.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- INTERNAL Dependencies START -->
+			<dependency>
+				<groupId>ro.fiipractic</groupId>
+				<artifactId>fii-practic-core</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
+			<!-- INTERNAL Dependencies END -->
+
+			<!-- RESTEASY Dependencies START -->
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-spring</artifactId>
+				<version>${resteasy.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.jaxrs</groupId>
+				<artifactId>jackson-jaxrs-json-provider</artifactId>
+				<version>${fasterxml.version}</version>
+			</dependency>
+			<!-- RESTEASY Dependencies END -->
+
+			<!-- CORS Filter Dependencies START -->
+			<dependency>
+				<groupId>com.thetransactioncompany</groupId>
+				<artifactId>cors-filter</artifactId>
+				<version>${cors.filter.version}</version>
+			</dependency>
+			<!-- CORS Filter Dependencies END -->
+		</dependencies>
+	</dependencyManagement>
+</project>
